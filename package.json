@@ -1,0 +1,23 @@
+{
+  "name": "bank-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThangSuperMan/bank-website-for-class-software-enginner.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThangSuperMan/bank-website-for-class-software-enginner/issues"
+  },
+  "homepage": "https://github.com/ThangSuperMan/bank-website-for-class-software-enginner#readme",
+  "dependencies": {
+    "cz-conventional-changelog": "^3.3.0"
+  }
+}
