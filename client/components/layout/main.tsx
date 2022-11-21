@@ -15,7 +15,7 @@ const Layout: React.FC<Props> = (props) => {
       <Navbar asPath={asPath} />
       {children}
       <Footer />
-    </div>
+    </div >
   )
 }
 
