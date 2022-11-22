@@ -1,0 +1,15 @@
+.toolItem svg path{
+  transition: all 0.1s ease-in;
+}
+
+.toolItem:hover svg path{
+  stroke: #008C44;
+}
+
+.toolItem > span {
+  transition: all 0.1s ease-in;
+}
+
+.toolItem:hover > span {
+  color: #008C44;
+}

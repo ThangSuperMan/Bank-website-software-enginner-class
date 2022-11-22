@@ -9,10 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "^13.0.4",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
+    "embla-carousel-auto-height": "^7.0.5",
     "embla-carousel-autoplay": "^7.0.5",
     "embla-carousel-react": "^7.0.5",
     "eslint": "8.28.0",
