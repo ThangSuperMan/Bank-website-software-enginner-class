@@ -49,7 +49,7 @@ const Sidebar: React.FC = () => {
       <div>
         <div className="sidebar-benefits mt-[10px] border-[1px] rounded-lg">
           <h4 className="pt-7 pl-5 pr-4 pb-4 text-[22px]">Công cụ & Tiện ích</h4>
-          <div className="px-[10px]">
+          <div className="px-[10px] py-[20px]">
             <Link className={`${styles.toolItem} flex items-center p-[10px]`} href="/cong-cu/tra-cuu/tiet-kiem">
               <svg className="" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path

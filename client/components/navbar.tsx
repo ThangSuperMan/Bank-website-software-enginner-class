@@ -80,7 +80,7 @@ const Navbar: React.FC<NavbarProps> = ({ asPath }) => {
         </ul>
       </div>
       <div ref={loginBtnRef} className="navbar-container__right relative">
-        <NextLink href="/user/login">
+        <NextLink href="login">
           <div className=" flex items-center py-[7.5px] px-2 border-gray-light border-[1px] rounded-lg">
             <Image
               src={LogoLoginIcon}
@@ -96,7 +96,7 @@ const Navbar: React.FC<NavbarProps> = ({ asPath }) => {
         <div className="absolute top-full w-full h-[10px] opacity-0"></div>
         <div ref={loginSubmenuRef} className="navbar-chiddenontainer__right-sub-login hidden opacity-0 absolute z-50 bg-white py-2 border-[1px] rounded-lg top-[49px] left-0 right-0">
           <div className="p-2 text-gray-dark hover:bg-blue-100">
-            <NextLink href="/user/login">Cá Nhân</NextLink>
+            <NextLink href="/login">Cá Nhân</NextLink>
           </div>
           <div className="bg-gray-seperate-line-light mx-auto h-[1px] w-[calc(100%-20px)]"></div>
           <div className="p-2 text-gray-dark hover:bg-blue-100">
