@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/ThangSuperMan/bank-website-for-class-software-enginner#readme",
   "dependencies": {
-    "cz-conventional-changelog": "^3.3.0"
+    "cz-conventional-changelog": "^3.3.0",
+    "next-auth": "^4.17.0"
   }
 }

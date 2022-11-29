@@ -31,7 +31,6 @@ const Navbar: React.FC<NavbarProps> = ({ asPath }) => {
   const loginSubmenuRef = useRef<HTMLDivElement>(null)
 
   const handleMouseEnterBtnLogin = () => {
-    console.log('handleHoverBtnLogin');
     const { current: loginSubmenuEl } = loginSubmenuRef
     if (loginSubmenuEl) {
       loginSubmenuEl.style.display = 'block'
@@ -40,7 +39,6 @@ const Navbar: React.FC<NavbarProps> = ({ asPath }) => {
   }
 
   const handleMouseLeaveBtnLogin = () => {
-    console.log('handleMouseLeaveBtnLogin ');
     const { current: loginSubmenuEl } = loginSubmenuRef
     if (loginSubmenuEl) {
       loginSubmenuEl.style.display = 'none'
@@ -56,7 +54,7 @@ const Navbar: React.FC<NavbarProps> = ({ asPath }) => {
   }, [])
 
   return (
-    <div className="navbar-container fixed top-0 right-0 left-0 z-50 bg-white flex items-center justify-between border-slate-200 border-[1px] py-[15px] px-[30px]">
+    <div className="navbar-container fixed top-0 right-0 left-0 z-10 bg-white flex items-center justify-between border-slate-200 border-[1px] py-[15px] px-[30px]">
       <div className="navbar-container__left flex items-center">
         <NextLink href="/">
           <Logo />
