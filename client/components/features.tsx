@@ -38,7 +38,7 @@ const Features: React.FC = () => {
 
   return (
     <div>
-      <div className="viewport" ref={viewportRef}>
+      <div className="viewport overflow-hidden" ref={viewportRef}>
         <div className={styles.featureContainer}>
           <FeatureItem content="OMNI Cá Nhân" link="/ca-nhan" imageSrc={FeatureOne} />
           <FeatureItem content="Tiền vay" link="/tien-vay" imageSrc={FeatureTwo} />
@@ -47,7 +47,7 @@ const Features: React.FC = () => {
           <FeatureItem content="Tiết kiệm" link="/tiet-kiem" imageSrc={FeatureFive} />
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 

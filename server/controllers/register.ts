@@ -14,7 +14,8 @@ function handleRegister(request: Request, response: Response, next: NextFunction
     city: request.body.city
   }
 
-  const isSuccess: Boolean = createUser(user)
+  let isSuccess: any = createUser(user)
+  // const errorMessages = []
   if (isSuccess) {
     response.status(201).json({ message: 'Successfully, created the user' })
   } else {

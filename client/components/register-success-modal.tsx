@@ -36,7 +36,6 @@ const RegisterSuccessModal: React.FC<Props> = ({ handleClose, accountNo, firstNa
   return (
     <Backdrop onClick={handleClose}>
       <motion.div
-        onClick={(e) => e.stopPropagation()}
         className={styles.modal}
         variants={dropIn}
         initial="hidden"

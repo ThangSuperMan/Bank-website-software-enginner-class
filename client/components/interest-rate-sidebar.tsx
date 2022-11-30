@@ -5,12 +5,12 @@ import styles from '../styles/interest-rate-sidebar.module.css'
 const Sidebar: React.FC = () => {
 
   return (
-    <div className="interest-rate-sidebar-container w-[25%] px-[15px]">
+    <div className="interest-rate-sidebar-container w-full tablet:w-[25%] px-0 tablet:px-[15px]">
       <div className="border-[1px] rounded-lg">
         <div className="relative bg-gray-interest-rate rounded-tl-lg h-12 overflow-hidden rounded-tr-lg">
           <div className="w-[50%] left-[-20px] h-12 absolute rounded-tl-lg rounded-tr-lg bg-primary-color skew-x-[40deg]"></div>
           <div
-            className="w-[50%] left-[-20px] absolute top-0 right-0 text-center h-12 text-[13px] leading-[48px] text-white z-20"
+            className="w-[50%] left-[-20px] absolute top-0 right-0 pl-[30px]  h-12 text-[13px] leading-[48px] text-white z-20"
           >LÃI SUẤT</div>
         </div>
         <div className="w-full bg-gray-interest-rate ">

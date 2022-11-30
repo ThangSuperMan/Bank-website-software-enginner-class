@@ -18,7 +18,7 @@ export default function Home() {
         <EmlaCarouselContainer />
         <div className="main-content max-w-[1200px] px-[15px] mx-auto">
           <Features />
-          <div className="flex items-start mt-20 font-[600]">
+          <div className="flex flex-wrap items-start mt-20 font-[600]">
             <Sidebar />
             <Endow />
           </div>

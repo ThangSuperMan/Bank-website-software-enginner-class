@@ -7,7 +7,7 @@ import Appstore from '../public/appstore.png'
 const Footer: React.FC = () => {
   return (
     <footer>
-      <div className="bg-footer-gray-light text-[15px]">
+      <div className="bg-footer-gray-light text-[15px] overflow-hidden">
         <div className="flex items-center justify-between py-5 max-w-[1200px] px-[15px] mx-auto">
           <span className="mt-[9px] mr-6 font-semibold">Đăng ký nhận thông tin từ OCB</span>
           <div className="flex items-center">

@@ -54,7 +54,7 @@ const Navbar: React.FC<NavbarProps> = ({ asPath }) => {
   }, [])
 
   return (
-    <div className="navbar-container fixed top-0 right-0 left-0 z-10 bg-white flex items-center justify-between border-slate-200 border-[1px] py-[15px] px-[30px]">
+    <nav className="navbar-container fixed top-0 right-0 left-0 z-10 bg-white sm:flex items-center justify-between border-slate-200 border-[1px] py-[15px] px-[30px]">
       <div className="navbar-container__left flex items-center">
         <NextLink href="/">
           <Logo />
@@ -92,7 +92,7 @@ const Navbar: React.FC<NavbarProps> = ({ asPath }) => {
           </div>
         </NextLink>
         <div className="absolute top-full w-full h-[10px] opacity-0"></div>
-        <div ref={loginSubmenuRef} className="navbar-chiddenontainer__right-sub-login hidden opacity-0 absolute z-50 bg-white py-2 border-[1px] rounded-lg top-[49px] left-0 right-0">
+        <div ref={loginSubmenuRef} className="navbar-container__right-sub-login opacity-0 absolute z-50 bg-white py-2 border-[1px] rounded-lg top-[49px] left-0 right-0">
           <div className="p-2 text-gray-dark hover:bg-blue-100">
             <NextLink href="/login">Cá Nhân</NextLink>
           </div>
@@ -102,7 +102,7 @@ const Navbar: React.FC<NavbarProps> = ({ asPath }) => {
           </div>
         </div>
       </div>
-    </div >
+    </nav>
   )
 }
 
