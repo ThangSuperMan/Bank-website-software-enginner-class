@@ -1,12 +1,17 @@
 import express, { Request, Response, NextFunction } from 'express'
 import bodyParser from 'body-parser'
 import { handleRegister } from './controllers/register'
+import sqlite3 from 'sqlite3'
+import { connection } from './database/connection'
 import cors from 'cors'
+import initModel from './models/init'
 
 const port = 3001
 let corsOptions = {
   origin: ['http://localhost:3000']
 }
+const db: sqlite3.Database = connection()
+initModel(db)
 const app = express()
 
 // Middleware
@@ -16,12 +21,7 @@ app.use(cors(corsOptions))
 
 app.get('/', (request: Request, response: Response, next: NextFunction) => {
   console.log('homepage')
-  try {
-    throw new Error("haha error")
-  } catch (err: any) {
-    console.log(err)
-    response.status(500).json({ err: `Error: ${err.message}` })
-  }
+  response.status(500).json({ quote: 'hello' })
 })
 
 app.get('/', (request: Request, response: Response, next: NextFunction) => {

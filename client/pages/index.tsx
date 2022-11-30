@@ -2,6 +2,7 @@ import Head from 'next/head'
 import EmlaCarouselContainer from '../components/embla-carousel-container'
 import Endow from '../components/endow'
 import Features from '../components/features'
+import Footer from '../components/footer'
 import Sidebar from '../components/interest-rate-sidebar'
 import Favicon from '../public/favicon.svg'
 
@@ -22,6 +23,7 @@ export default function Home() {
             <Endow />
           </div>
         </div>
+        <Footer />
       </main>
     </div>
   )

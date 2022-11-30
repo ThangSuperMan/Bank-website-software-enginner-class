@@ -8,11 +8,12 @@ function handleRegister(request: Request, response: Response, next: NextFunction
   const user: User = {
     firstName: request.body.firstName,
     lastName: request.body.lastName,
-    accountNo: request.body.accountNo,
+    accountNo: parseInt(request.body.accountNo),
     password: request.body.password,
     gender: request.body.gender,
     city: request.body.city
   }
+
   const isSuccess: Boolean = createUser(user)
   if (isSuccess) {
     response.status(201).json({ message: 'Successfully, created the user' })

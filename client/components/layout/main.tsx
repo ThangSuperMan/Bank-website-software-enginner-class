@@ -1,5 +1,4 @@
 import React from 'react'
-import Footer from '../footer'
 import Navbar from '../navbar'
 
 interface Props {
@@ -14,7 +13,6 @@ const Layout: React.FC<Props> = (props) => {
     <div>
       <Navbar asPath={asPath} />
       {children}
-      <Footer />
     </div >
   )
 }

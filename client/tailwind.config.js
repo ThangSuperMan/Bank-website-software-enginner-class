@@ -18,7 +18,9 @@ module.exports = {
         'gray-light': '#CACDD1',
         'footer-gray-light': '#F8F8F8'
       },
-
+      screens: {
+        'tablet': '900px',
+      }
     },
   },
   plugins: [],

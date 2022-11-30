@@ -3,7 +3,8 @@
   width: 90%;
   height: 50%;
   height: min(50%, 300px);
-  background: orange;
+  padding: 16px;
+  background: #ffffff;
   border-radius: 12px;
   display: flex;
   flex-direction: column;

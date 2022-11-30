@@ -2,7 +2,8 @@ import React from 'react'
 import Backdrop from './backdrop'
 import styles from '../styles/register-success-modal.module.css'
 import { motion } from 'framer-motion'
-
+import Image from 'next/image'
+import SuccessCheckmar from '../public/success-checkmark.png'
 
 const dropIn = {
   hidden: {
@@ -27,10 +28,11 @@ const dropIn = {
 
 interface Props {
   handleClose: () => void
+  firstName: string
   accountNo: string
 }
 
-const RegisterSuccessModal: React.FC<Props> = ({ handleClose, accountNo }) => {
+const RegisterSuccessModal: React.FC<Props> = ({ handleClose, accountNo, firstName }) => {
   return (
     <Backdrop onClick={handleClose}>
       <motion.div
@@ -41,9 +43,10 @@ const RegisterSuccessModal: React.FC<Props> = ({ handleClose, accountNo }) => {
         animate="enter"
         exit={{ opacity: 1, y: '50vh' }}
       >
-        <h1 className="text-white">RegisterSuccessModal</h1>
-        <p className="text-center text-[15px]">Chúng mừng bạn, bãn vừa mới đăng ký tài khoản thành công với mã tài khoản là:{accountNo}</p>
-        <button onClick={handleClose}>Close</button>
+        <Image src={SuccessCheckmar} alt="Checkmark success" />
+        <p className="mt-3 text-center text-[15px]">Chúng mừng bạn {firstName}, bãn vừa mới đăng ký tài khoản thành công
+          <span className="block">với mã tài khoản là: {accountNo}</span>
+        </p>
       </motion.div>
     </Backdrop >
   )
