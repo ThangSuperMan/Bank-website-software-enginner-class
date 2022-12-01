@@ -8,6 +8,7 @@ interface Props {
 }
 
 function readUserByAccountNumber(accountNo: number): Promise<Props> {
+  console.log('readUserByAccountNumber')
   const db: sqlite3.Database = connection()
   const sql = `
   select * from users 
@@ -16,10 +17,13 @@ function readUserByAccountNumber(accountNo: number): Promise<Props> {
   return new Promise((resolve, reject) => {
     db.get(sql, [accountNo], (err: any, row: any) => {
       if (err) {
+        console.log('case 1')
         reject({ error: err, row: row })
       } else if (row == undefined) {
+        console.log('case 2')
         resolve({ error: null, row: null })
       } else {
+        console.log('case 3')
         resolve({ error: null, row: row })
       }
     })
@@ -56,5 +60,6 @@ async function createUser(user: User) {
 }
 
 export {
-  createUser
+  createUser,
+  readUserByAccountNumber,
 }

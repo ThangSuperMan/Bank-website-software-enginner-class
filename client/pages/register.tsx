@@ -4,8 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Section from '../components/animation/section'
 import TransitionPage from '../components/animation/page-transition'
 import RegisterSuccessModal from '../components/register-success-modal'
-import { isNumberObject } from 'util/types'
-import { warn } from 'console'
 
 interface PropsRegister {
   firstName: string
@@ -22,7 +20,6 @@ const baseURL = 'http://localhost:3001'
 function isNumber(n: any) {
   return /^-?[\d.]+(?:e-?\d+)?$/.test(n)
 }
-console.log(`isNumber: ${isNumber('123')}`);
 
 const Register: React.FC = () => {
   const [isSuccessRegister, setIsSuccessRegister] = useState<boolean>(false)
@@ -75,7 +72,6 @@ const Register: React.FC = () => {
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     console.log('handleSubmit');
-    console.log(`accountNo value: ${accountNoRef.current?.value}`);
     e.preventDefault()
     const { current: firstNameEl } = firstNameRef
     const { current: lastNameEl } = lastNameRef
@@ -97,18 +93,12 @@ const Register: React.FC = () => {
       }
 
       const isMatchPassword: boolean = isSamePassword(registerInfo.password, registerInfo.confirmPassword)
-      console.log(isMatchPassword);
-      if (isMatchPassword) {
-        console.log(`isNumber(accountNo): ${isNumber(registerInfo.accountNo)}`);
+      if (isMatchPassword && isNumber(registerInfo.accountNo)) {
         if (isNumber(registerInfo.accountNo)) {
-          console.log(`accountNo is a number`);
-        } else {
-          console.log(`accountNo is not a number`);
+          createUser(registerInfo)
+          setAccountNo(registerInfo.accountNo)
+          setFirstName(firstNameEl.value)
         }
-        console.log(`isMatchPassword: ${isMatchPassword} `);
-        createUser(registerInfo)
-        setAccountNo(registerInfo.accountNo)
-        setFirstName(firstNameEl.value)
         return
       }
       console.log(`isMatchPassword: ${isMatchPassword} `);

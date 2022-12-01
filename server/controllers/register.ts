@@ -1,4 +1,4 @@
-import express, { Request, Response, NextFunction, request } from 'express'
+import express, { Request, Response, NextFunction } from 'express'
 import { User } from '../schemas/main'
 import { createUser } from '../models/user'
 
