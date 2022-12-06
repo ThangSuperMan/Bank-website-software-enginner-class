@@ -16,6 +16,7 @@ module.exports = {
         'gray-dot-navigation': '#E4EBF2',
         'gray-seperate-line-light': '#D9D9D9',
         'gray-light': '#CACDD1',
+        'blue-google-signin': '#1952F3',
         'footer-gray-light': '#F8F8F8'
       },
       screens: {

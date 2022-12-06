@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react'
 import Section from '../components/animation/section'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
+import GoogleIcon from '../public/google-icon.png'
 
 const baseURL = 'http://localhost:3001'
 
@@ -88,6 +90,12 @@ const Login: React.FC = () => {
               </div>
             </div>
             <div className="diagnostics text-red-400">{errorMessage}</div>
+            <div className="flex items-center p-1 bg-blue-400 login-by-google-account">
+              <div className="p-1 bg-white">
+                <Image src={GoogleIcon} width={40} height={40} alt="Google icon" />
+              </div>
+              <span className="ml-2 text-white">Đăng nhập bằng tài khoản google</span>
+            </div>
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -95,7 +103,6 @@ const Login: React.FC = () => {
               className="w-full px-3 py-2 mt-2 text-white rounded-md bg-secondary-color"
             >Đăng nhập
             </motion.button>
-
           </form>
         </div>
       </div>
