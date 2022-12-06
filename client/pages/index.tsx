@@ -1,3 +1,4 @@
+import { PrismaClient } from '@prisma/client'
 import Head from 'next/head'
 import EmlaCarouselContainer from '../components/embla-carousel-container'
 import Endow from '../components/endow'
@@ -6,7 +7,12 @@ import Footer from '../components/footer'
 import Sidebar from '../components/interest-rate-sidebar'
 import Favicon from '../public/favicon.svg'
 
-export default function Home() {
+
+export default function Home(props: any) {
+  const { users } = props
+  console.log('home compo');
+  console.log(users);
+
   return (
     <div>
       <Head>
@@ -27,4 +33,16 @@ export default function Home() {
       </main>
     </div>
   )
+}
+
+export async function getServerSideProps() {
+  const prisma = new PrismaClient()
+  const users = await prisma.users.findMany()
+  console.log(`user of prisma sqlite`);
+  console.log(typeof users);
+  console.log(users);
+
+  return {
+    props: { users }
+  }
 }
