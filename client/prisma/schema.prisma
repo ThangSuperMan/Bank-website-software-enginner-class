@@ -26,3 +26,19 @@ model BankAccount {
   user          Users @relation(fields: [userAccountNo], references: [accountNo])
   userAccountNo Int
 }
+
+model RevenueSavingsAccount {
+  year      Int    @id
+  janunary  String
+  february  String
+  march     String
+  april     String
+  may       String
+  june      String
+  july      String
+  august    String
+  september String
+  october   String
+  november  String
+  december  String
+}

@@ -15,3 +15,20 @@ CREATE TABLE "BankAccount" (
     "userAccountNo" INTEGER NOT NULL,
     CONSTRAINT "BankAccount_userAccountNo_fkey" FOREIGN KEY ("userAccountNo") REFERENCES "Users" ("accountNo") ON DELETE RESTRICT ON UPDATE CASCADE
 );
+
+-- CreateTable
+CREATE TABLE "RevenueSavingsAccount" (
+    "year" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "janunary" TEXT NOT NULL,
+    "february" TEXT NOT NULL,
+    "march" TEXT NOT NULL,
+    "april" TEXT NOT NULL,
+    "may" TEXT NOT NULL,
+    "june" TEXT NOT NULL,
+    "july" TEXT NOT NULL,
+    "august" TEXT NOT NULL,
+    "september" TEXT NOT NULL,
+    "october" TEXT NOT NULL,
+    "november" TEXT NOT NULL,
+    "december" TEXT NOT NULL
+);

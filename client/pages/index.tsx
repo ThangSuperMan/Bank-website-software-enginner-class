@@ -9,9 +9,10 @@ import Favicon from '../public/favicon.svg'
 
 
 export default function Home(props: any) {
-  const { users } = props
+  const { users, revenue } = props
   console.log('home compo');
   console.log(users);
+  console.log(revenue);
 
   return (
     <div>
@@ -37,12 +38,13 @@ export default function Home(props: any) {
 
 export async function getServerSideProps() {
   const prisma = new PrismaClient()
-  const users = await prisma.users.findMany()
+  const users = await prisma.users.findFirst()
+  const revenue = await prisma.revenueSavingsAccount.findFirst()
   console.log(`user of prisma sqlite`);
-  console.log(typeof users);
-  console.log(users);
+  console.log(typeof revenue);
+  console.log(revenue);
 
   return {
-    props: { users }
+    props: { users, revenue }
   }
 }

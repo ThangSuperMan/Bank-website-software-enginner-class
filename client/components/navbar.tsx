@@ -99,7 +99,7 @@ const Navbar: React.FC<NavbarProps> = ({ asPath }) => {
           </div>
           <div className="bg-gray-seperate-line-light mx-auto h-[1px] w-[calc(100%-20px)]"></div>
           <div className="p-2 text-gray-dark hover:bg-blue-100">
-            <NextLink href="/user/business">Nhân Viên Kế Toán</NextLink>
+            <NextLink href="/employe">Nhân Viên Kế Toán</NextLink>
           </div>
         </div>
       </div>
