@@ -27,9 +27,9 @@ const Login: React.FC = () => {
   console.log('login compo');
   console.log(session);
 
-  // if (session) {
-  //   router.push('/dashboard', undefined, { scroll: true })
-  // }
+  if (session) {
+    router.push('/dashboard', undefined, { scroll: true })
+  }
 
   function refreshInputsValue() {
     const { current: accountNoEl } = accountNoREf
@@ -44,7 +44,6 @@ const Login: React.FC = () => {
     signIn("google", { callbackUrl: "http://localhost:3000/login" })
   }
 
-
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
     console.log('handleSubmit login');
     e.preventDefault()
@@ -55,14 +54,10 @@ const Login: React.FC = () => {
     let loginAccountInfo: LoginAccountInfo
 
     if (accountNoEl && passwordEl) {
-      console.log(`accountNo: ${accountNoEl.value}`);
-      const status = await signIn("credentials", {
+      signIn('credentials', {
         accountNo: accountNoEl.value,
-        password: passwordEl.value,
-        redirect: false,
+        password: passwordEl.value
       })
-
-      console.log(status);
     }
   }
 
@@ -113,5 +108,7 @@ const Login: React.FC = () => {
     </Section>
   )
 }
+
+
 
 export default Login

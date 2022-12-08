@@ -27,9 +27,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   if (revenue !== null) {
     console.log(revenue)
-    res.send({ revenue: revenue, message: 'Tìm kiếm thành công', isSuccessFindYear: true })
+    res.send({ revenue: revenue, message: 'Tìm kiếm thành công', isSuccessFindRevenueOfYear: true })
   } else {
     console.log('we dont have revenue')
-    res.send({ message: 'Xinh lỗi nhưng năm bạn nhập vào không hợp lệ', isSuccessFindYear: false })
+    res.send({ message: 'Xinh lỗi nhưng năm bạn nhập vào không hợp lệ', isSuccessFindRevenueOfYear: false })
   }
 }
