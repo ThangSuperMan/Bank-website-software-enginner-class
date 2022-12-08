@@ -18,6 +18,7 @@ model Users {
   gender      String
   city        String
   BankAccount BankAccount[]
+  SavingsBook SavingsBook[]
 }
 
 model BankAccount {
@@ -41,4 +42,14 @@ model RevenueSavingsAccount {
   october   String
   november  String
   december  String
+}
+
+model SavingsBook {
+  id            Int      @id @default(autoincrement())
+  typeSavings   String
+  timeSavings   String
+  canWithdraw   Boolean
+  user          Users    @relation(fields: [userAccountNo], references: [accountNo])
+  userAccountNo Int
+  createdAt     DateTime @default(now())
 }

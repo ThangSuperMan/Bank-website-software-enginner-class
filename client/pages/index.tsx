@@ -7,12 +7,11 @@ import Footer from '../components/footer'
 import Sidebar from '../components/interest-rate-sidebar'
 import Favicon from '../public/favicon.svg'
 
-
 export default function Home(props: any) {
-  const { users, revenue } = props
-  console.log('home compo');
-  console.log(users);
-  console.log(revenue);
+  // const { users, revenue } = props
+  // console.log('home compo');
+  // console.log(users);
+  // console.log(revenue);
 
   return (
     <div>
@@ -36,15 +35,15 @@ export default function Home(props: any) {
   )
 }
 
-export async function getServerSideProps() {
-  const prisma = new PrismaClient()
-  const users = await prisma.users.findFirst()
-  const revenue = await prisma.revenueSavingsAccount.findFirst()
-  console.log(`user of prisma sqlite`);
-  console.log(typeof revenue);
-  console.log(revenue);
-
-  return {
-    props: { users, revenue }
-  }
-}
+// export async function getServerSideProps() {
+//   const prisma = new PrismaClient()
+//   const users = await prisma.users.findFirst()
+//   const revenue = await prisma.revenueSavingsAccount.findFirst()
+//   console.log(`user of prisma sqlite`);
+//   console.log(typeof revenue);
+//   console.log(revenue);
+//
+//   return {
+//     props: { users, revenue }
+//   }
+// }

@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import Section from '../components/animation/section';
 import Chart from '../components/chart';
 
-export default function Employe(props: any) {
+export default function Accountant(props: any) {
   const yearRef = useRef<HTMLInputElement>(null)
   const [dataRevenue, setDataRevenue] = useState<any>()
 

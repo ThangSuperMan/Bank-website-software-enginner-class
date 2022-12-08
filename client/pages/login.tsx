@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import Section from '../components/animation/section'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
@@ -24,7 +24,6 @@ const Login: React.FC = () => {
   const accountNoREf = useRef<HTMLInputElement>(null)
   const passwordRef = useRef<HTMLInputElement>(null)
   const { data: session } = useSession()
-  console.log('login compo');
   console.log(session);
 
   if (session) {
@@ -39,29 +38,26 @@ const Login: React.FC = () => {
       passwordEl.value = ''
     }
   }
+
   const handleGoogleSignin = () => {
-    console.log('handleGoogleSignn')
     signIn("google", { callbackUrl: "http://localhost:3000/login" })
   }
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
-    console.log('handleSubmit login');
     e.preventDefault()
-    console.log('handleSubmit');
     const { current: accountNoEl } = accountNoREf
     const { current: passwordEl } = passwordRef
 
     let loginAccountInfo: LoginAccountInfo
 
     if (accountNoEl && passwordEl) {
+      console.log('accnoutNo and password exists');
       signIn('credentials', {
         accountNo: accountNoEl.value,
         password: passwordEl.value
       })
     }
   }
-
-  console.log('just rendered the login compo');
 
   return (
     <Section delay={0.1}>
