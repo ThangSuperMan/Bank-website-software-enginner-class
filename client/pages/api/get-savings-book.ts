@@ -3,17 +3,19 @@ import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
-
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  console.log('user-get route')
-  console.log('req.body')
-  console.log(req.body)
-  const user = await prisma.users.findUnique({
+  const { firstName } = req.body
+  const users = await prisma.users.findMany({
     where: {
-      accountNo: 123
+      firstName: {
+        startsWith: firstName
+      }
+    },
+    include: {
+      SavingsBook: true
     }
   })
-  console.log(user)
-  res.json({ user })
-}
 
+  console.log(users)
+  res.json({ users })
+}

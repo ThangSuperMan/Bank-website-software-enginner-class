@@ -32,3 +32,14 @@ CREATE TABLE "RevenueSavingsAccount" (
     "november" TEXT NOT NULL,
     "december" TEXT NOT NULL
 );
+
+-- CreateTable
+CREATE TABLE "SavingsBook" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "typeSavings" TEXT NOT NULL,
+    "timeSavings" INTEGER NOT NULL,
+    "canWithdraw" BOOLEAN NOT NULL,
+    "userAccountNo" INTEGER NOT NULL,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT "SavingsBook_userAccountNo_fkey" FOREIGN KEY ("userAccountNo") REFERENCES "Users" ("accountNo") ON DELETE RESTRICT ON UPDATE CASCADE
+);

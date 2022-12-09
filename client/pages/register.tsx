@@ -35,12 +35,10 @@ const Register: React.FC = () => {
   const cityRef = useRef<HTMLSelectElement>(null)
 
   function close() {
-    console.log('close');
     setIsRegisterModalOpen(false)
   }
 
   function open() {
-    console.log('open');
     setIsRegisterModalOpen(true)
   }
 
@@ -49,24 +47,6 @@ const Register: React.FC = () => {
       return true
     }
     return false
-  }
-
-  async function createUser(registerInfo: PropsRegister) {
-    const fetchOptions = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(registerInfo)
-    }
-    const response = await fetch(`${baseURL}/users/register`, fetchOptions)
-    const data = await response.json()
-    if (response.status === 201 || response.status === 200) {
-      setIsSuccessRegister(true)
-      console.log(`Successfully post data to the backend`);
-      console.log(data);
-    } else if (response.status === 500) {
-    }
   }
 
   const clearInputValues = () => {
@@ -126,8 +106,8 @@ const Register: React.FC = () => {
           const { message, isRegisterSuccess }: PropsRegisterResponse = data
           console.log(isRegisterSuccess);
           if (isRegisterSuccess) {
-            alert(message)
             clearInputValues()
+            alert(message)
           } else {
             alert(message)
           }

@@ -15,7 +15,7 @@ const Section: React.FC<Props> = ({ children, delay }) => {
       transition={{ duration: 0.8, delay: delay }}
     >
       {children}
-    </motion.div >
+    </motion.div>
   )
 }
 

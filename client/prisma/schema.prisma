@@ -10,6 +10,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// datasource db {
+//   provider = "postgresql"
+//   url      = env("DATABASE_URL")
+// }
+
 model Users {
   accountNo   Int           @id
   firstName   String
@@ -45,11 +50,12 @@ model RevenueSavingsAccount {
 }
 
 model SavingsBook {
-  id            Int      @id @default(autoincrement())
-  typeSavings   String
-  timeSavings   String
-  canWithdraw   Boolean
-  user          Users    @relation(fields: [userAccountNo], references: [accountNo])
-  userAccountNo Int
-  createdAt     DateTime @default(now())
+  id             Int      @id @default(autoincrement())
+  typeSavings    String
+  timeSavings    Int
+  canWithdraw    Boolean
+  userAccountNo  Int
+  createdAt      DateTime @default(now())
+  Users          Users?   @relation(fields: [usersAccountNo], references: [accountNo])
+  usersAccountNo Int?
 }
