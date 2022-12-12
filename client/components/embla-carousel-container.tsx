@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
@@ -23,7 +23,6 @@ const DotPagination = ({ selected, onClick }: DotButtonProps) => {
 }
 
 const EmlaCarouselContainer = () => {
-  const imageRef = useRef<any>(null)
   const [selectedIndex, setSelectedIndex] = useState<number>(0)
   const [scrollSnaps, setScrollSnaps] = useState([1, 1, 1, 1])
   const [viewportRef, emblaApi] = useEmblaCarousel(

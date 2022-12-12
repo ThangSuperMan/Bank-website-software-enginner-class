@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
 const BankEmploye: React.FC = () => {
+  console.log(BankEmploye);
   const [users, setUsers] = useState([])
 
   const handleChangeInputSearch: React.ChangeEventHandler<HTMLInputElement> = async (e) => {

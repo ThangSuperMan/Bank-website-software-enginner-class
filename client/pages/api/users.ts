@@ -20,11 +20,11 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   } catch (e: any) {
     console.log(e);
     if (e instanceof Prisma.PrismaClientKnownRequestError) {
-      console.log(`error here:`);
-      if (e.code === 'P2002')
+      if (e.code === 'P2002') {
         console.log(`error when create the new user`);
-      console.log(e);
-      err = e
+        console.log(e);
+        err = e
+      }
     }
   }
 

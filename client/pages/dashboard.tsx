@@ -1,8 +1,6 @@
-import { unstable_getServerSession } from 'next-auth';
-import { getSession, signOut, useSession } from 'next-auth/react'
+import { signOut, useSession } from 'next-auth/react'
 import React from 'react'
 import Section from '../components/animation/section';
-import { authOptions } from './api/auth/[...nextauth]'
 
 const Dashboard = () => {
   const { data: session, status } = useSession({ required: true })
@@ -31,30 +29,5 @@ const Dashboard = () => {
     )
   }
 }
-
-// export const getServerSideProps = async ({ req: any, res: any }) => {
-//   return {
-//     props: {
-// session: await unstable_getServerSession(req, res, authOptions)
-//   }
-// }
-// }
-
-
-// export const getServerSideProps = async (context: any) => {
-//   const session = await getSession(context)
-//   console.log(session);
-//   if (!session) {
-//     return {
-//       redirect: {
-//         destination: '/login'
-//       }
-//     }
-//   }
-//
-//   return {
-//     props: { session }
-//   }
-// }
 
 export default Dashboard

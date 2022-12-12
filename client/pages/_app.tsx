@@ -7,7 +7,6 @@ import { Session } from 'next-auth'
 export default function Website({
   Component, pageProps, router
 }: AppProps<{ session: Session; }>) {
-
   const { session } = pageProps
 
   return (

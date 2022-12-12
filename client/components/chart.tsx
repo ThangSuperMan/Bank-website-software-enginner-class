@@ -49,11 +49,7 @@ interface Props {
 }
 
 const Chart: React.FC<Props> = (props) => {
-  console.log('chart compo');
   const { revenuMonths } = props
-  console.log(typeof revenuMonths);
-  console.log(revenuMonths);
-
   const data = {
     labels: labels,
     datasets: [
@@ -65,7 +61,6 @@ const Chart: React.FC<Props> = (props) => {
     ],
   };
 
-  console.log('datat in chart compo');
   return (
     <div className="max-w-[768px] mx-auto">
       <Bar data={data} options={options} />
